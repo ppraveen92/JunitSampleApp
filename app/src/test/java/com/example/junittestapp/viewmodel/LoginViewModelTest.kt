@@ -7,7 +7,6 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
-import org.mockito.Mock
 
 @RunWith(JUnit4::class)
 class LoginViewModelTest {
@@ -15,7 +14,6 @@ class LoginViewModelTest {
     @get:Rule
     var instantExecutorRule = InstantTaskExecutorRule()
 
-    @Mock
     lateinit var mLoginViewModel: LoginViewModel
 
     @Before
@@ -25,13 +23,19 @@ class LoginViewModelTest {
 
     @Test
     fun `test for empty case`() {
-        val status = mLoginViewModel.logUser("", "");
+        val status = mLoginViewModel.logUser("", "")
         assertEquals(status, false)
     }
 
     @Test
-    fun `test for login case`() {
-        val status = mLoginViewModel.logUser("pra", "arp");
+    fun `test for already exist user`() {
+        val status = mLoginViewModel.logUser("prave", "e")
+        assertEquals(status, false)
+    }
+
+    @Test
+    fun `test for registration case`() {
+        val status = mLoginViewModel.logUser("pra", "arp")
         assertEquals(status, true)
     }
 }

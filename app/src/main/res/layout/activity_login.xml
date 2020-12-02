@@ -29,6 +29,7 @@
                 android:layout_marginLeft="@dimen/marginn_bottom_20"
                 android:layout_marginRight="@dimen/marginn_bottom_20"
                 android:hint="@string/testing_with_livedata"
+                android:importantForAutofill="no"
                 android:inputType="text"
                 android:text="@={loginviewmodel.edittext}"
                 android:textColor="@color/black"
@@ -40,6 +41,7 @@
                 android:layout_marginLeft="@dimen/marginn_bottom_20"
                 android:layout_marginRight="@dimen/marginn_bottom_20"
                 android:hint="@string/username"
+                android:importantForAutofill="no"
                 android:inputType="text"
                 android:text="@{loginviewmodel.username}"
                 android:textColor="@color/black"
@@ -52,6 +54,7 @@
                 android:layout_marginRight="@dimen/marginn_bottom_20"
                 android:layout_marginBottom="@dimen/marginn_10"
                 android:hint="@string/password"
+                android:importantForAutofill="no"
                 android:inputType="textPassword"
                 android:text="@{loginviewmodel.pass}"
                 android:textColor="@color/black"
@@ -97,8 +100,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="2"
+                android:layout_height="match_parent"
                 android:gravity="center_horizontal"
                 android:text='@{loginviewmodel.status,default="Status"}'
                 android:textColor="@color/stylish_red"

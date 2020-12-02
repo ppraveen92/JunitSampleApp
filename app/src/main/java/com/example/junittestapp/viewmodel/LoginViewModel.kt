@@ -7,24 +7,21 @@ import androidx.lifecycle.ViewModel
 
 open class LoginViewModel : ViewModel() {
 
+    private val userList = listOf("prave","vimal")
     var username = MutableLiveData<String>()
     var pass = MutableLiveData<String>()
     var edittext = MutableLiveData<String>()
     var status = MutableLiveData<String>()
 
     fun updateUserName(v: View) {
-        loginUser()
-    }
-
-    fun loginUser() {
         logUser(username.value.toString(), pass.value.toString())
     }
 
     fun logUser(user: String, pass: String): Boolean {
-        if (pass.equals("") || user.equals("")) {
+        if ( user.equals("") || pass.equals(""))
             return false
-        } else {
-            return true
-        }
+        if (userList.contains(user))
+        return false
+        return true
     }
 }

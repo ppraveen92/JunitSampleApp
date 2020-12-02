@@ -12,16 +12,12 @@ import com.example.junittestapp.databinding.ActivityLoginBinding
 import com.example.junittestapp.viewmodel.LoginViewModel
 
 class LoginActivity : AppCompatActivity() {
-
     lateinit var binding: ActivityLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
         val viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
         binding.loginviewmodel = viewModel
-        binding.lifecycleOwner = this
-        viewModel.username.value = ""
-        viewModel.pass.value = ""
         viewModel.status.observe(this, Observer {
             Toast.makeText(this, viewModel.status.value, Toast.LENGTH_SHORT).show()
         })
@@ -31,7 +27,6 @@ class LoginActivity : AppCompatActivity() {
 
     }
 }
-
 fun Activity.ShowToastMessage(s: String) {
     Toast.makeText(this, s, Toast.LENGTH_SHORT).show()
 }

@@ -34,7 +34,6 @@
         <item name="colorControlActivated">#FFF</item>
     </style>
 
-
     <style name="MyEditTextTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorControlNormal">#000</item>
         <item name="colorControlActivated">#000</item>
